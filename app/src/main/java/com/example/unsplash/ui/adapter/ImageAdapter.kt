@@ -1,4 +1,4 @@
-package com.example.unsplash.ui
+package com.example.unsplash.ui.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -24,7 +24,7 @@ class ImageAdapter(private val context: Context, private val randomImageList: Un
         return ImageHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ImageAdapter.ImageHolder, position: Int) {
+    override fun onBindViewHolder(holder: ImageHolder, position: Int) {
         val randomImage: UnsplashImage = randomImageList[position]
         holder.bind(randomImage)
         holder.itemView.setOnClickListener {
@@ -32,8 +32,6 @@ class ImageAdapter(private val context: Context, private val randomImageList: Un
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 putExtra("Image", randomImage)
             }
-
-            Log.d("PicoAdapter", intent.extras?.getParcelable<UnsplashImage>("Image").toString())
             context.startActivity(intent)
         }
     }

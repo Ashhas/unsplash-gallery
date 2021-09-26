@@ -16,10 +16,10 @@ class UnsplashRepositoryImpl @Inject constructor(
             val response = api.getRandomImageList(imageCount)
             val result = response.body()
             if (response.isSuccessful && result != null) {
-                Log.d("UnsplashRepositoryImpl", result.toString())
+                Log.d("UnsplashRepositoryImpl", "Request Finished Successfully")
                 Resource.Succes(result)
             } else {
-                Log.d("UnsplashRepositoryImpl", result.toString())
+                Log.d("UnsplashRepositoryImpl", "Request Finished but Failed")
                 Resource.Error(response.message())
             }
         } catch (e: Exception) {

@@ -27,7 +27,6 @@ class DetailViewModel constructor(
     val imageCreatedDate: LiveData<String> get() = _imageCreatedDate
 
     init {
-        Log.d("DetailModel", randomImage.toString())
         _imageUrl.value = randomImage?.urls?.regular
         _imageDescription.value = randomImage?.description
         _imageUserName.value = randomImage?.user?.username
