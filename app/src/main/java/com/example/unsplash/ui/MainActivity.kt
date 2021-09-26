@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.unsplash.R
 import com.example.unsplash.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        mainViewModel.imageList.observe(this, Observer { newImageList ->
+            binding.rvImages.layoutManager = GridLayoutManager(applicationContext, 2)
+            binding.rvImages.adapter =
+                ImageAdapter(context = applicationContext, randomImageList = newImageList)
+        })
     }
 }
