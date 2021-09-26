@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 import com.example.unsplash.data.models.UnsplashImage
 import com.example.unsplash.databinding.ActivityDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.*
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
@@ -46,8 +48,8 @@ class DetailActivity : AppCompatActivity() {
         })
 
         //Created date textview
-        detailViewModel.imageCreatedDate.observe(this, { newImageDescription ->
-            binding.tvImageCreatedAt.text = newImageDescription
+        detailViewModel.imageCreatedDate.observe(this, { newImageCreationDate ->
+            binding.tvImageCreatedAt.text = newImageCreationDate
         })
     }
 

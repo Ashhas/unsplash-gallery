@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.unsplash.data.models.UnsplashImage
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DetailViewModel constructor(
     randomImage: UnsplashImage?
@@ -29,7 +31,16 @@ class DetailViewModel constructor(
         _imageUrl.value = randomImage?.urls?.regular
         _imageDescription.value = randomImage?.description
         _imageUserName.value = randomImage?.user?.username
-        _imageCreatedDate.value = randomImage?.created_at
+        _imageCreatedDate.value = formatDateTime(randomImage?.created_at)
+    }
+
+    private fun formatDateTime(dateTime: String?): String {
+        val inputDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH)
+        val outputDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH)
+
+        val parsedDate = inputDateFormat.parse(dateTime!!)
+
+        return outputDateFormat.format(parsedDate!!)
     }
 
 }
