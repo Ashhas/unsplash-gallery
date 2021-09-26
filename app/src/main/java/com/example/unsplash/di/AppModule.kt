@@ -4,6 +4,7 @@ import com.example.unsplash.BuildConfig
 import com.example.unsplash.data.UnsplashApi
 import com.example.unsplash.repository.UnsplashRepository
 import com.example.unsplash.repository.UnsplashRepositoryImpl
+import com.example.unsplash.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,9 +15,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-
-private const val BASE_URL = "https://api.unsplash.com/"
-private const val AUTH_HEADER_KEY = "Client-ID 3YGM1o9lwptv5aXkXJyWCUZDfuC36tviCxO3ml0UbB8"
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -39,7 +37,7 @@ object AppModule {
 
             addInterceptor { chain ->
                 val request = chain.request().newBuilder()
-                    .addHeader("Authorization", AUTH_HEADER_KEY)
+                    .addHeader("Authorization", Constants.AUTH_HEADER_KEY)
                     .build()
                 chain.proceed(request)
             }
@@ -49,7 +47,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideUnsplashApi(): UnsplashApi = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(Constants.BASE_URL)
         .client(getOkHttpClient())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
