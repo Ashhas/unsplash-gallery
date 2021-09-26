@@ -2,4 +2,6 @@
     <string name="app_name">Unsplash</string>
     <string name="detailImageDescription">Image in detail view</string>
     <string name="gridImageDescription">Image in grid view</string>
+    <string name="byCreator">Photo By</string>
+    <string name="createdOn">Created On:</string>
 </resources>

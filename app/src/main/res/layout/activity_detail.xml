@@ -18,34 +18,61 @@
         tools:layout_editor_absoluteX="-34dp" />
 
     <TextView
+        android:id="@+id/tvCreatedOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/createdOn"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toTopOf="@+id/tvImageDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvImageCreator"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvPhotoBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/byCreator"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImageDetail" />
+
+    <TextView
         android:id="@+id/tvImageDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivImageDetail"
+        app:layout_constraintTop_toBottomOf="@+id/tvImageCreatedAt"
         tools:text="ImageDescription" />
 
     <TextView
         android:id="@+id/tvImageCreator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvImageDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhotoBy"
         tools:text="CreatorName" />
 
     <TextView
         android:id="@+id/tvImageCreatedAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@+id/tvImageCreator"
-        app:layout_constraintTop_toTopOf="@+id/tvImageCreator"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="13dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/tvCreatedOn"
+        app:layout_constraintTop_toBottomOf="@+id/tvImageCreator"
         tools:text="ImageCreatedAt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
