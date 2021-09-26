@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/CodingProjects/unsplash-gallery/app/src/main/res/layout/activity_detail.xml" value="0.67" />
+        <entry key="..\:/CodingProjects/unsplash-gallery/app/src/main/res/layout/activity_detail.xml" value="0.33" />
         <entry key="..\:/CodingProjects/unsplash-gallery/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/CodingProjects/unsplash-gallery/app/src/main/res/layout/grid_image_item.xml" value="0.1" />
+        <entry key="..\:/CodingProjects/unsplash-gallery/app/src/main/res/layout/grid_image_item.xml" value="0.33" />
       </map>
     </option>
   </component>
