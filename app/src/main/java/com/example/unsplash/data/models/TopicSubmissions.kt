@@ -1,3 +1,7 @@
 package com.example.unsplash.data.models
 
-class TopicSubmissions
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+class TopicSubmissions : Parcelable

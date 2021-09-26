@@ -1,5 +1,9 @@
 package com.example.unsplash.data.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class LinksX(
     val followers: String,
     val following: String,
@@ -8,4 +12,4 @@ data class LinksX(
     val photos: String,
     val portfolio: String,
     val self: String
-)
+) : Parcelable
