@@ -32,6 +32,9 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Setup Back Button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //Init passed image
         displayImage = intent.extras?.getParcelable<UnsplashImage>("Image")
 
@@ -56,7 +59,10 @@ class DetailActivity : AppCompatActivity() {
         detailViewModel.imageCreatedDate.observe(this, Observer { newImageDescription ->
             binding.tvImageCreatedAt.text = newImageDescription
         })
+    }
 
-
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }
