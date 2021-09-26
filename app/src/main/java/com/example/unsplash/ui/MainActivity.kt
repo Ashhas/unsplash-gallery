@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Setup Recyclerview
         mainViewModel.imageList.observe(this, Observer { newImageList ->
             binding.rvImages.layoutManager = GridLayoutManager(applicationContext, 2)
             binding.rvImages.adapter =
