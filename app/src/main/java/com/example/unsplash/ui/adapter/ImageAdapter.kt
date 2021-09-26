@@ -2,7 +2,6 @@ package com.example.unsplash.ui.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +44,7 @@ class ImageAdapter(private val context: Context, private val randomImageList: Un
         fun bind(randomImage: UnsplashImage) {
             Glide.with(context)
                 .load(randomImage.urls?.regular)
-                .into(itemBinding.ivImage);
+                .into(itemBinding.ivImage)
         }
     }
 }

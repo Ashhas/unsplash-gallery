@@ -1,13 +1,12 @@
 package com.example.unsplash.ui.detail
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.unsplash.data.models.UnsplashImage
 
 class DetailViewModel constructor(
-    private val randomImage: UnsplashImage?
+    randomImage: UnsplashImage?
 ) : ViewModel() {
 
     //ImageURL

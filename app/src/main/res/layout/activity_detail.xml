@@ -11,10 +11,11 @@
         android:id="@+id/ivImageDetail"
         android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:background="@color/gray"
+        android:contentDescription="@string/detailImageDescription"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-34dp"
-        android:background="@color/gray"/>
+        tools:layout_editor_absoluteX="-34dp" />
 
     <TextView
         android:id="@+id/tvImageDescription"

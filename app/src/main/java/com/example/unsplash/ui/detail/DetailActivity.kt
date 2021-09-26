@@ -2,21 +2,11 @@ package com.example.unsplash.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.unsplash.R
 import com.example.unsplash.data.models.UnsplashImage
 import com.example.unsplash.databinding.ActivityDetailBinding
-import com.example.unsplash.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
-import javax.inject.Named
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
@@ -36,27 +26,27 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //Init passed image
-        displayImage = intent.extras?.getParcelable<UnsplashImage>("Image")
+        displayImage = intent.extras?.getParcelable("Image")
 
         //ImageView
-        detailViewModel.imageUrl.observe(this, Observer { newImageUrl ->
+        detailViewModel.imageUrl.observe(this, { newImageUrl ->
             Glide.with(this)
                 .load(newImageUrl)
-                .into(binding.ivImageDetail);
+                .into(binding.ivImageDetail)
         })
 
         //Description textview
-        detailViewModel.imageDescription.observe(this, Observer { newImageDescription ->
+        detailViewModel.imageDescription.observe(this, { newImageDescription ->
             binding.tvImageDescription.text = newImageDescription
         })
 
         //Creator textview
-        detailViewModel.imageUserName.observe(this, Observer { newImageDescription ->
+        detailViewModel.imageUserName.observe(this, { newImageDescription ->
             binding.tvImageCreator.text = newImageDescription
         })
 
         //Created date textview
-        detailViewModel.imageCreatedDate.observe(this, Observer { newImageDescription ->
+        detailViewModel.imageCreatedDate.observe(this, { newImageDescription ->
             binding.tvImageCreatedAt.text = newImageDescription
         })
     }
