@@ -21,6 +21,12 @@
 - [OkHttp3](https://github.com/square/okhttp)
 - [Glide](https://github.com/bumptech/glide) 
 
+## Improvements ✓
+
+- [ ] Switch from 2 Activities to a Shared Elements transition for an Unsplash Image
+- [ ] Add an download button to make the app more functional
+
+
 ## How to Build
 
 Note that in order to access the Unsplash API, you must:
