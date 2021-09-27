@@ -23,7 +23,7 @@
 
 ## Improvements ✓
 
-- [ ] Switch from 2 Activities to a Shared Elements transition for an Unsplash Image
+- [ ] Switch from 2 Activities to 1 Activity w/ fragments for navigation
 - [ ] Add an download button to make the app more functional
 
 
