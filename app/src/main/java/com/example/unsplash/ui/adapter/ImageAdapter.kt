@@ -10,6 +10,7 @@ import com.example.unsplash.data.models.UnsplashImage
 import com.example.unsplash.data.models.UnsplashImageList
 import com.example.unsplash.databinding.GridImageItemBinding
 import com.example.unsplash.ui.detail.DetailActivity
+import com.example.unsplash.util.Constants.IMAGE_PARCEL_KEY
 
 class ImageAdapter(private val context: Context, private val randomImageList: UnsplashImageList) :
     RecyclerView.Adapter<ImageAdapter.ImageHolder>() {
@@ -29,7 +30,9 @@ class ImageAdapter(private val context: Context, private val randomImageList: Un
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetailActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                putExtra("Image", randomImage)
+                putExtra(
+                    IMAGE_PARCEL_KEY, randomImage
+                )
             }
             context.startActivity(intent)
         }
