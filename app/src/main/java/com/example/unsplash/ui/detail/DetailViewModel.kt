@@ -15,6 +15,10 @@ class DetailViewModel constructor(
     private val _imageUrl = MutableLiveData<String>()
     val imageUrl: LiveData<String> get() = _imageUrl
 
+    //ImageURL
+    private val _imageUnsplashUrl = MutableLiveData<String>()
+    val imageUnsplashUrl: LiveData<String> get() = _imageUnsplashUrl
+
     //Image Description
     private val _imageDescription = MutableLiveData<String>()
     val imageDescription: LiveData<String> get() = _imageDescription
@@ -29,6 +33,7 @@ class DetailViewModel constructor(
 
     init {
         _imageUrl.value = randomImage?.urls?.regular
+        _imageUnsplashUrl.value = randomImage?.links?.html
         _imageDescription.value = randomImage?.description
         _imageUserName.value = randomImage?.user?.username
         _imageCreatedDate.value = formatDateTime(randomImage?.created_at)
