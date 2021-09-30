@@ -4,4 +4,5 @@
     <string name="gridImageDescription">Image in grid view</string>
     <string name="byCreator">Photo By</string>
     <string name="createdOn">Created On:</string>
+    <string name="OpenUrl">Open URl</string>
 </resources>
