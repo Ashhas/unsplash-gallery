@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.unsplash.data.models.UnsplashImage
 import com.example.unsplash.data.models.UnsplashImageList
 import com.example.unsplash.databinding.GridImageItemBinding
@@ -47,6 +48,7 @@ class ImageAdapter(private val context: Context, private val randomImageList: Un
         fun bind(randomImage: UnsplashImage) {
             Glide.with(context)
                 .load(randomImage.urls?.regular)
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(itemBinding.ivImage)
         }
     }
