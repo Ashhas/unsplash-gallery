@@ -24,6 +24,7 @@
 ## Improvements ✓
 
 - [ ] Switch from 2 Activities to 1 Activity w/ fragments for navigation
+- [x] ~~Add animation on loading in an Image~~
 - [x] ~~Add an download button to make the app more functional~~ Added button to open url to the website
 
 
