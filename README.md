@@ -1,6 +1,6 @@
 # Unsplash Gallery
 
-:camera: Simple gallery app with Unsplash API. Here I experiment with some Modern Android development tools & concepts - (Kotlin, MVVM, Dependecy Injection, Architecture Components)
+:camera: Simple gallery app with Unsplash API. Here I experiment with some Android development libraries & concepts - MVVM, Dependecy Injection and Glide
 
 ## Screenshots
 <p>
